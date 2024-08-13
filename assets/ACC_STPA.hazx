@@ -1,0 +1,867 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ns2:dataModelController xmlns:ns2="astpa.model" projectId="eb2893b7-fe44-4a24-b3cf-0b8ba3b96f51" version="3.1">
+    <projectdata>
+        <styleRanges/>
+        <projectDescription>aaaaaa</projectDescription>
+        <projectName>myproject</projectName>
+    </projectdata>
+    <hazacc>
+        <accidents>
+            <accident changed="true">
+                <id>58ee3df4-5b99-4e72-b546-33a4669bf892</id>
+                <title>Collision</title>
+                <description></description>
+                <number>2</number>
+            </accident>
+        </accidents>
+        <hazards>
+            <hazard changed="true">
+                <id>f7717d9b-dd24-4bf6-84c0-ddc24c550ebe</id>
+                <title>Not sending brake signal</title>
+                <description></description>
+                <number>1</number>
+            </hazard>
+        </hazards>
+    </hazacc>
+    <sds>
+        <safetyConstraints>
+            <safetyConstraint>
+                <id>0c22c547-3fc2-48bd-b15b-ab6c65056e46</id>
+                <title>MyConstraint</title>
+                <description></description>
+                <number>1</number>
+            </safetyConstraint>
+        </safetyConstraints>
+    </sds>
+    <controlstructure useMultiRoots="false">
+        <rootComponents>
+            <root>
+                <id>fbc9d3c1-2b4d-48c0-9aa4-e2baa6db8b40</id>
+                <text>level 0</text>
+                <isSafetyCritical>false</isSafetyCritical>
+                <layout>
+                    <height>0</height>
+                    <width>0</width>
+                    <x>0</x>
+                    <y>0</y>
+                    <location>
+                        <x>0</x>
+                        <y>0</y>
+                    </location>
+                    <size>
+                        <width>0</width>
+                        <height>0</height>
+                    </size>
+                </layout>
+                <layoutPM>
+                    <height>0</height>
+                    <width>0</width>
+                    <x>0</x>
+                    <y>0</y>
+                    <location>
+                        <x>0</x>
+                        <y>0</y>
+                    </location>
+                    <size>
+                        <width>0</width>
+                        <height>0</height>
+                    </size>
+                </layoutPM>
+                <componentType>ROOT</componentType>
+                <causalFactors/>
+                <children>
+                    <component>
+                        <id>575770d9-af6f-4730-8e60-e976d1df5059</id>
+                        <text>Controller 1</text>
+                        <isSafetyCritical>false</isSafetyCritical>
+                        <comment></comment>
+                        <layout>
+                            <height>40</height>
+                            <width>120</width>
+                            <x>403</x>
+                            <y>119</y>
+                            <location>
+<x>403</x>
+<y>119</y>
+                            </location>
+                            <size>
+<width>120</width>
+<height>40</height>
+                            </size>
+                        </layout>
+                        <layoutPM>
+                            <height>170</height>
+                            <width>246</width>
+                            <x>403</x>
+                            <y>119</y>
+                            <location>
+<x>403</x>
+<y>119</y>
+                            </location>
+                            <size>
+<width>246</width>
+<height>170</height>
+                            </size>
+                        </layoutPM>
+                        <componentType>CONTROLLER</componentType>
+                        <causalFactors/>
+                        <children>
+                            <component>
+<id>88c2b479-b233-4d8b-8e71-635f829eef32</id>
+<text>MyProcessModel</text>
+<isSafetyCritical>false</isSafetyCritical>
+<layout>
+    <height>40</height>
+    <width>120</width>
+    <x>27</x>
+    <y>20</y>
+    <location>
+        <x>27</x>
+        <y>20</y>
+    </location>
+    <size>
+        <width>120</width>
+        <height>40</height>
+    </size>
+</layout>
+<layoutPM>
+    <height>124</height>
+    <width>217</width>
+    <x>15</x>
+    <y>23</y>
+    <location>
+        <x>15</x>
+        <y>23</y>
+    </location>
+    <size>
+        <width>217</width>
+        <height>124</height>
+    </size>
+</layoutPM>
+<componentType>PROCESS_MODEL</componentType>
+<causalFactors/>
+<children>
+    <component>
+        <id>7663b8cb-94fa-4247-8661-0f5fec69c0d9</id>
+        <text>MyVar</text>
+        <isSafetyCritical>false</isSafetyCritical>
+        <layout>
+            <height>40</height>
+            <width>120</width>
+            <x>30</x>
+            <y>8</y>
+            <location>
+                <x>30</x>
+                <y>8</y>
+            </location>
+            <size>
+                <width>120</width>
+                <height>40</height>
+            </size>
+        </layout>
+        <layoutPM>
+            <height>40</height>
+            <width>120</width>
+            <x>8</x>
+            <y>15</y>
+            <location>
+                <x>8</x>
+                <y>15</y>
+            </location>
+            <size>
+                <width>120</width>
+                <height>40</height>
+            </size>
+        </layoutPM>
+        <componentType>PROCESS_VARIABLE</componentType>
+        <causalFactors/>
+        <children>
+            <component>
+                <id>baad6dc7-34c0-44a4-899a-b7d665120d47</id>
+                <text>Normal</text>
+                <isSafetyCritical>false</isSafetyCritical>
+                <comment></comment>
+                <layout>
+                    <height>15</height>
+                    <width>100</width>
+                    <x>44</x>
+                    <y>19</y>
+                    <location>
+                        <x>44</x>
+                        <y>19</y>
+                    </location>
+                    <size>
+                        <width>100</width>
+                        <height>15</height>
+                    </size>
+                </layout>
+                <layoutPM>
+                    <height>15</height>
+                    <width>100</width>
+                    <x>44</x>
+                    <y>19</y>
+                    <location>
+                        <x>44</x>
+                        <y>19</y>
+                    </location>
+                    <size>
+                        <width>100</width>
+                        <height>15</height>
+                    </size>
+                </layoutPM>
+                <componentType>PROCESS_VALUE</componentType>
+                <causalFactors/>
+                <children/>
+            </component>
+            <component>
+                <id>0db74612-fa92-453d-a040-e41e871645f8</id>
+                <text>Abnormal</text>
+                <isSafetyCritical>false</isSafetyCritical>
+                <comment></comment>
+                <layout>
+                    <height>15</height>
+                    <width>100</width>
+                    <x>44</x>
+                    <y>32</y>
+                    <location>
+                        <x>44</x>
+                        <y>32</y>
+                    </location>
+                    <size>
+                        <width>100</width>
+                        <height>15</height>
+                    </size>
+                </layout>
+                <layoutPM>
+                    <height>15</height>
+                    <width>100</width>
+                    <x>44</x>
+                    <y>32</y>
+                    <location>
+                        <x>44</x>
+                        <y>32</y>
+                    </location>
+                    <size>
+                        <width>100</width>
+                        <height>15</height>
+                    </size>
+                </layoutPM>
+                <componentType>PROCESS_VALUE</componentType>
+                <causalFactors/>
+                <children/>
+            </component>
+        </children>
+    </component>
+</children>
+                            </component>
+                        </children>
+                    </component>
+                    <component>
+                        <id>dd324cc2-a83f-489d-b2fa-dc58467a0e57</id>
+                        <text>Actuator 1</text>
+                        <isSafetyCritical>false</isSafetyCritical>
+                        <comment></comment>
+                        <layout>
+                            <height>40</height>
+                            <width>120</width>
+                            <x>240</x>
+                            <y>216</y>
+                            <location>
+<x>240</x>
+<y>216</y>
+                            </location>
+                            <size>
+<width>120</width>
+<height>40</height>
+                            </size>
+                        </layout>
+                        <layoutPM>
+                            <height>40</height>
+                            <width>120</width>
+                            <x>240</x>
+                            <y>216</y>
+                            <location>
+<x>240</x>
+<y>216</y>
+                            </location>
+                            <size>
+<width>120</width>
+<height>40</height>
+                            </size>
+                        </layoutPM>
+                        <componentType>ACTUATOR</componentType>
+                        <causalFactors/>
+                        <children/>
+                    </component>
+                    <component>
+                        <id>3ddab7a8-bf57-4375-a747-4ee978c3b184</id>
+                        <text>Sensor 1</text>
+                        <isSafetyCritical>false</isSafetyCritical>
+                        <comment></comment>
+                        <layout>
+                            <height>40</height>
+                            <width>120</width>
+                            <x>659</x>
+                            <y>230</y>
+                            <location>
+<x>659</x>
+<y>230</y>
+                            </location>
+                            <size>
+<width>120</width>
+<height>40</height>
+                            </size>
+                        </layout>
+                        <layoutPM>
+                            <height>40</height>
+                            <width>120</width>
+                            <x>659</x>
+                            <y>230</y>
+                            <location>
+<x>659</x>
+<y>230</y>
+                            </location>
+                            <size>
+<width>120</width>
+<height>40</height>
+                            </size>
+                        </layoutPM>
+                        <componentType>SENSOR</componentType>
+                        <causalFactors/>
+                        <children/>
+                    </component>
+                    <component>
+                        <id>30a515ee-41e7-46e5-84d3-e766944c3f89</id>
+                        <text>Controlled Process 1</text>
+                        <isSafetyCritical>false</isSafetyCritical>
+                        <comment></comment>
+                        <layout>
+                            <height>40</height>
+                            <width>120</width>
+                            <x>453</x>
+                            <y>336</y>
+                            <location>
+<x>453</x>
+<y>336</y>
+                            </location>
+                            <size>
+<width>120</width>
+<height>40</height>
+                            </size>
+                        </layout>
+                        <layoutPM>
+                            <height>40</height>
+                            <width>120</width>
+                            <x>453</x>
+                            <y>336</y>
+                            <location>
+<x>453</x>
+<y>336</y>
+                            </location>
+                            <size>
+<width>120</width>
+<height>40</height>
+                            </size>
+                        </layoutPM>
+                        <componentType>CONTROLLED_PROCESS</componentType>
+                        <causalFactors/>
+                        <children/>
+                    </component>
+                    <component>
+                        <id>39020998-36f9-4072-84b1-a3ccb2500e5c</id>
+                        <controlActionId>498a8fa2-16c6-450a-a571-1acdd6489a4f</controlActionId>
+                        <text>Accel</text>
+                        <isSafetyCritical>false</isSafetyCritical>
+                        <comment></comment>
+                        <layout>
+                            <height>11</height>
+                            <width>120</width>
+                            <x>240</x>
+                            <y>158</y>
+                            <location>
+<x>240</x>
+<y>158</y>
+                            </location>
+                            <size>
+<width>120</width>
+<height>11</height>
+                            </size>
+                        </layout>
+                        <layoutPM>
+                            <height>11</height>
+                            <width>120</width>
+                            <x>240</x>
+                            <y>158</y>
+                            <location>
+<x>240</x>
+<y>158</y>
+                            </location>
+                            <size>
+<width>120</width>
+<height>11</height>
+                            </size>
+                        </layoutPM>
+                        <componentType>CONTROLACTION</componentType>
+                        <relative>51cc0619-7079-419a-8061-7e01edd03507</relative>
+                        <causalFactors/>
+                        <children/>
+                    </component>
+                    <component>
+                        <id>8f29d69b-622c-4176-a32a-8552ba90d378</id>
+                        <controlActionId>0996fce7-ee00-4eb3-88a1-18f5767a7a8e</controlActionId>
+                        <text>IncreasePower</text>
+                        <isSafetyCritical>false</isSafetyCritical>
+                        <comment></comment>
+                        <layout>
+                            <height>11</height>
+                            <width>120</width>
+                            <x>204</x>
+                            <y>336</y>
+                            <location>
+<x>204</x>
+<y>336</y>
+                            </location>
+                            <size>
+<width>120</width>
+<height>11</height>
+                            </size>
+                        </layout>
+                        <layoutPM>
+                            <height>11</height>
+                            <width>120</width>
+                            <x>204</x>
+                            <y>336</y>
+                            <location>
+<x>204</x>
+<y>336</y>
+                            </location>
+                            <size>
+<width>120</width>
+<height>11</height>
+                            </size>
+                        </layoutPM>
+                        <componentType>CONTROLACTION</componentType>
+                        <relative>9d97d706-6e14-4671-ad10-a6029a3276ad</relative>
+                        <causalFactors/>
+                        <children/>
+                    </component>
+                    <component>
+                        <id>9993b378-e733-46f0-99a0-58acef456eda</id>
+                        <controlActionId>13a75bc2-80d4-4af9-b1f8-dd5d1f49adf7</controlActionId>
+                        <text>Distance</text>
+                        <isSafetyCritical>false</isSafetyCritical>
+                        <layout>
+                            <height>11</height>
+                            <width>120</width>
+                            <x>624</x>
+                            <y>158</y>
+                            <location>
+<x>624</x>
+<y>158</y>
+                            </location>
+                            <size>
+<width>120</width>
+<height>11</height>
+                            </size>
+                        </layout>
+                        <layoutPM>
+                            <height>11</height>
+                            <width>120</width>
+                            <x>624</x>
+                            <y>158</y>
+                            <location>
+<x>624</x>
+<y>158</y>
+                            </location>
+                            <size>
+<width>120</width>
+<height>11</height>
+                            </size>
+                        </layoutPM>
+                        <componentType>CONTROLACTION</componentType>
+                        <relative>5c5ad6c5-fd39-45d7-aeac-07dcbbac4112</relative>
+                        <causalFactors/>
+                        <children/>
+                    </component>
+                </children>
+            </root>
+        </rootComponents>
+        <connections>
+            <connection>
+                <id>5c5ad6c5-fd39-45d7-aeac-07dcbbac4112</id>
+                <connectionType>ARROW_SIMPLE</connectionType>
+                <sourceAnchor>
+                    <xOrientation>44</xOrientation>
+                    <yOrientation>0</yOrientation>
+                    <ownerId>3ddab7a8-bf57-4375-a747-4ee978c3b184</ownerId>
+                    <id>52a9434c-2079-4298-b393-86149720c9c5</id>
+                </sourceAnchor>
+                <targetAnchor>
+                    <xOrientation>100</xOrientation>
+                    <yOrientation>40</yOrientation>
+                    <ownerId>575770d9-af6f-4730-8e60-e976d1df5059</ownerId>
+                    <id>048f4bc7-b8b4-4734-8f5c-c112054eac24</id>
+                </targetAnchor>
+            </connection>
+            <connection>
+                <id>51cc0619-7079-419a-8061-7e01edd03507</id>
+                <connectionType>ARROW_SIMPLE</connectionType>
+                <sourceAnchor>
+                    <xOrientation>0</xOrientation>
+                    <yOrientation>45</yOrientation>
+                    <ownerId>575770d9-af6f-4730-8e60-e976d1df5059</ownerId>
+                    <id>5ca0f1a3-e4f6-4535-a3d6-6b78d772edb6</id>
+                </sourceAnchor>
+                <targetAnchor>
+                    <xOrientation>41</xOrientation>
+                    <yOrientation>0</yOrientation>
+                    <ownerId>dd324cc2-a83f-489d-b2fa-dc58467a0e57</ownerId>
+                    <id>a46a74b0-1add-47d6-8351-0d030983a486</id>
+                </targetAnchor>
+            </connection>
+            <connection>
+                <id>9d97d706-6e14-4671-ad10-a6029a3276ad</id>
+                <connectionType>ARROW_SIMPLE</connectionType>
+                <sourceAnchor>
+                    <xOrientation>51</xOrientation>
+                    <yOrientation>100</yOrientation>
+                    <ownerId>dd324cc2-a83f-489d-b2fa-dc58467a0e57</ownerId>
+                    <id>9cb1b94e-f83a-45aa-8e74-4850554c66cf</id>
+                </sourceAnchor>
+                <targetAnchor>
+                    <xOrientation>0</xOrientation>
+                    <yOrientation>62</yOrientation>
+                    <ownerId>30a515ee-41e7-46e5-84d3-e766944c3f89</ownerId>
+                    <id>ec3de92e-a75d-40df-a1dd-9d5ffcfb090b</id>
+                </targetAnchor>
+            </connection>
+            <connection>
+                <id>a80b1cfa-42e1-47c5-85a5-681ce7f105a4</id>
+                <connectionType>ARROW_SIMPLE</connectionType>
+                <sourceAnchor>
+                    <xOrientation>100</xOrientation>
+                    <yOrientation>62</yOrientation>
+                    <ownerId>30a515ee-41e7-46e5-84d3-e766944c3f89</ownerId>
+                    <id>e5157256-6b21-4ec8-94c7-18585911881c</id>
+                </sourceAnchor>
+                <targetAnchor>
+                    <xOrientation>44</xOrientation>
+                    <yOrientation>100</yOrientation>
+                    <ownerId>3ddab7a8-bf57-4375-a747-4ee978c3b184</ownerId>
+                    <id>52926465-37ca-4a94-bf05-6ab456b4297d</id>
+                </targetAnchor>
+            </connection>
+        </connections>
+    </controlstructure>
+    <ignoreLTLValue>
+        <id>8edbd6e4-7b15-43cf-966a-f158ac0df61c</id>
+        <text>(don't care)</text>
+        <isSafetyCritical>false</isSafetyCritical>
+        <layout>
+            <height>0</height>
+            <width>0</width>
+            <x>0</x>
+            <y>0</y>
+            <location>
+                <x>0</x>
+                <y>0</y>
+            </location>
+            <size>
+                <width>0</width>
+                <height>0</height>
+            </size>
+        </layout>
+        <layoutPM>
+            <height>0</height>
+            <width>0</width>
+            <x>0</x>
+            <y>0</y>
+            <location>
+                <x>0</x>
+                <y>0</y>
+            </location>
+            <size>
+                <width>0</width>
+                <height>0</height>
+            </size>
+        </layoutPM>
+        <componentType>PROCESS_VALUE</componentType>
+        <causalFactors/>
+        <children/>
+    </ignoreLTLValue>
+    <cac nextUcaIndex="7">
+        <controlactions>
+            <controlaction>
+                <id>498a8fa2-16c6-450a-a571-1acdd6489a4f</id>
+                <title>Accel</title>
+                <description></description>
+                <number>1</number>
+                <unsafecontrolactions>
+                    <unsafecontrolaction>
+                        <id>c3564344-7613-4409-b3c4-9482bfc25cd9</id>
+                        <title></title>
+                        <description></description>
+                        <number>3</number>
+                        <type>NOT_GIVEN</type>
+                        <correspondingSafetyConstraint>
+                            <id>d0576dc4-eda9-4c31-8978-4aedffaf70c8</id>
+                            <title></title>
+                            <description></description>
+                            <number>3</number>
+                        </correspondingSafetyConstraint>
+                    </unsafecontrolaction>
+                    <unsafecontrolaction>
+                        <id>215d0bf4-94e2-4af0-bfaf-8f3d970cca80</id>
+                        <title></title>
+                        <description></description>
+                        <number>4</number>
+                        <type>GIVEN_INCORRECTLY</type>
+                        <correspondingSafetyConstraint>
+                            <id>088a17ce-03e8-4117-9e66-a591ef7a1ea7</id>
+                            <title></title>
+                            <description></description>
+                            <number>4</number>
+                        </correspondingSafetyConstraint>
+                    </unsafecontrolaction>
+                    <unsafecontrolaction>
+                        <id>48c71a7b-38ec-46e8-b217-1368b2e62df0</id>
+                        <title></title>
+                        <description></description>
+                        <number>5</number>
+                        <type>WRONG_TIMING</type>
+                        <correspondingSafetyConstraint>
+                            <id>794b9a98-e64e-40b6-ba10-f2c6cb697210</id>
+                            <title></title>
+                            <description></description>
+                            <number>5</number>
+                        </correspondingSafetyConstraint>
+                    </unsafecontrolaction>
+                    <unsafecontrolaction>
+                        <id>3405b5c5-0206-426d-9d0d-cb3938d172df</id>
+                        <title></title>
+                        <description></description>
+                        <number>6</number>
+                        <type>STOPPED_TOO_SOON</type>
+                        <correspondingSafetyConstraint>
+                            <id>a4fbc50a-7f57-45a9-96d2-4b5b5bb4d0a9</id>
+                            <title></title>
+                            <description></description>
+                            <number>6</number>
+                        </correspondingSafetyConstraint>
+                    </unsafecontrolaction>
+                </unsafecontrolactions>
+                <componentLink>39020998-36f9-4072-84b1-a3ccb2500e5c</componentLink>
+                <isSafetyCritical>true</isSafetyCritical>
+                <providedPMVariables/>
+            </controlaction>
+            <controlaction>
+                <id>0996fce7-ee00-4eb3-88a1-18f5767a7a8e</id>
+                <title>IncreasePower</title>
+                <description></description>
+                <number>2</number>
+                <unsafecontrolactions/>
+                <componentLink>8f29d69b-622c-4176-a32a-8552ba90d378</componentLink>
+                <isSafetyCritical>true</isSafetyCritical>
+                <providedPMVariables>
+                    <variableID>7663b8cb-94fa-4247-8661-0f5fec69c0d9</variableID>
+                </providedPMVariables>
+                <PMCombisWhenProvided>
+                    <combinationOfPMValues>
+                        <processModelValueIDs/>
+                        <processModelVariableIDs/>
+                        <relatedUCAsAnytime/>
+                        <relatedUCAsTooLate/>
+                        <relatedUCAsTooEarly/>
+                        <hazardousAnyTime>false</hazardousAnyTime>
+                        <hazardousToLate>false</hazardousToLate>
+                        <hazardousifProvidedToEarly>false</hazardousifProvidedToEarly>
+                        <safetyConstraint></safetyConstraint>
+                        <archived>false</archived>
+                    </combinationOfPMValues>
+                    <combinationOfPMValues>
+                        <processModelValueIDs>
+                            <value>0db74612-fa92-453d-a040-e41e871645f8</value>
+                        </processModelValueIDs>
+                        <processModelVariableIDs>
+                            <variable>7663b8cb-94fa-4247-8661-0f5fec69c0d9</variable>
+                        </processModelVariableIDs>
+                        <relatedUCAsAnytime/>
+                        <relatedUCAsTooLate/>
+                        <relatedUCAsTooEarly/>
+                        <hazardousAnyTime>true</hazardousAnyTime>
+                        <hazardousToLate>true</hazardousToLate>
+                        <hazardousifProvidedToEarly>true</hazardousifProvidedToEarly>
+                        <safetyConstraint></safetyConstraint>
+                        <archived>false</archived>
+                    </combinationOfPMValues>
+                    <combinationOfPMValues>
+                        <processModelValueIDs>
+                            <value>baad6dc7-34c0-44a4-899a-b7d665120d47</value>
+                        </processModelValueIDs>
+                        <processModelVariableIDs>
+                            <variable>7663b8cb-94fa-4247-8661-0f5fec69c0d9</variable>
+                        </processModelVariableIDs>
+                        <relatedUCAsAnytime/>
+                        <relatedUCAsTooLate/>
+                        <relatedUCAsTooEarly/>
+                        <hazardousAnyTime>true</hazardousAnyTime>
+                        <hazardousToLate>true</hazardousToLate>
+                        <hazardousifProvidedToEarly>true</hazardousifProvidedToEarly>
+                        <safetyConstraint></safetyConstraint>
+                        <archived>false</archived>
+                    </combinationOfPMValues>
+                </PMCombisWhenProvided>
+            </controlaction>
+            <controlaction>
+                <id>13a75bc2-80d4-4af9-b1f8-dd5d1f49adf7</id>
+                <title>Distance</title>
+                <description></description>
+                <number>3</number>
+                <unsafecontrolactions/>
+                <componentLink>9993b378-e733-46f0-99a0-58acef456eda</componentLink>
+                <isSafetyCritical>true</isSafetyCritical>
+                <providedPMVariables/>
+            </controlaction>
+        </controlactions>
+        <ucaCustomHeaders>
+            <ucaHeader>Not providing causes hazard </ucaHeader>
+            <ucaHeader>Providing incorrect causes hazard </ucaHeader>
+            <ucaHeader>Wrong timing or order causes hazard </ucaHeader>
+            <ucaHeader>Stopped too soon or Applied too long</ucaHeader>
+        </ucaCustomHeaders>
+    </cac>
+    <causalfactor useScenarios="true" switchUCAsPerFactorToFactorsPerUCA="true">
+        <causalSafetyConstraints/>
+        <causalFactors/>
+    </causalfactor>
+    <extendedData nextScenarioIndex="10">
+        <rules>
+            <rule>
+                <ruleID>36a11787-23dc-4856-ae92-323752a5fc2c</ruleID>
+                <ruleNR>5</ruleNR>
+                <criticalCombies>MyVar==Abnormal</criticalCombies>
+                <RefinedSafetyRule>The IncreasePower command must not be provided anytime when MyVar = Abnormal</RefinedSafetyRule>
+                <refinedUCA>The IncreasePower command is provided anytime when MyVar is Abnormal</refinedUCA>
+                <refinedSC>IncreasePower command must not be provided anytime when MyVar is Abnormal</refinedSC>
+                <ltlProp>[] (((((MyVar==Abnormal)))-&gt;(!((controlAction==IncreasePower)))))</ltlProp>
+                <type>anytime</type>
+                <relatedUCAIDs/>
+                <relatedCaID>0996fce7-ee00-4eb3-88a1-18f5767a7a8e</relatedCaID>
+            </rule>
+            <rule>
+                <ruleID>362edb2f-88b9-43e9-914b-b7cba5f73124</ruleID>
+                <ruleNR>8</ruleNR>
+                <criticalCombies>MyVar==Normal</criticalCombies>
+                <RefinedSafetyRule>The IncreasePower command must not be provided anytime when MyVar = Normal</RefinedSafetyRule>
+                <refinedUCA>The IncreasePower command is provided anytime when MyVar is Normal</refinedUCA>
+                <refinedSC>IncreasePower command must not be provided anytime when MyVar is Normal</refinedSC>
+                <ltlProp>[] (((((MyVar==Normal)))-&gt;(!((controlAction==IncreasePower)))))</ltlProp>
+                <type>anytime</type>
+                <relatedUCAIDs/>
+                <relatedCaID>0996fce7-ee00-4eb3-88a1-18f5767a7a8e</relatedCaID>
+            </rule>
+            <rule>
+                <ruleID>4f318114-4b07-4f55-af7f-e1386df64027</ruleID>
+                <ruleNR>19</ruleNR>
+                <criticalCombies>ACE4==direct,ACE3==direct,ACE1==normal,ACE2==normal</criticalCombies>
+                <RefinedSafetyRule>The Provide displacement and force variables of the driving stick command must not be provided anytime when ACE4 = direct and ACE3 = direct and ACE1 = normal and ACE2 = normal</RefinedSafetyRule>
+                <refinedUCA>The Provide displacement and force variables of the driving stick command is provided anytime when ACE4 is direct and ACE3 is direct and ACE1 is normal and ACE2 is normal</refinedUCA>
+                <refinedSC>Provide displacement and force variables of the driving stick command must not be provided anytime when ACE4 is direct and ACE3 is direct and ACE1 is normal and ACE2 is normal</refinedSC>
+                <ltlProp>[] (((((ACE4==direct)&amp;&amp;(ACE3==direct)&amp;&amp;(ACE1==normal)&amp;&amp;(ACE2==normal)))-&gt;(!((controlAction==Providedisplacementandforcevariablesofthedrivingstick)))))</ltlProp>
+                <type>anytime</type>
+                <relatedUCAIDs/>
+                <relatedCaID>2192c083-40b2-479a-9358-ac078205ac92</relatedCaID>
+            </rule>
+            <rule>
+                <ruleID>23f69e48-868d-4c82-be6f-de66f927cce8</ruleID>
+                <ruleNR>10</ruleNR>
+                <criticalCombies>MyVar==Normal</criticalCombies>
+                <RefinedSafetyRule>The IncreasePower command must not be provided too late when MyVar = Normal</RefinedSafetyRule>
+                <refinedUCA>The IncreasePower command is provided too late when MyVar is Normal</refinedUCA>
+                <refinedSC>IncreasePower command must not be provided too late when MyVar is Normal</refinedSC>
+                <ltlProp>[] (((((((MyVar==Normal)))-&gt;((controlAction==IncreasePower))))&amp;&amp;(!(((((MyVar==Normal)))U((controlAction==IncreasePower)))))))</ltlProp>
+                <type>too late</type>
+                <relatedUCAIDs/>
+                <relatedCaID>0996fce7-ee00-4eb3-88a1-18f5767a7a8e</relatedCaID>
+            </rule>
+            <rule>
+                <ruleID>97106dba-33b9-422a-8a93-dc4402ca494e</ruleID>
+                <ruleNR>7</ruleNR>
+                <criticalCombies>MyVar==Abnormal</criticalCombies>
+                <RefinedSafetyRule>The IncreasePower command must not be provided too late when MyVar = Abnormal</RefinedSafetyRule>
+                <refinedUCA>The IncreasePower command is provided too late when MyVar is Abnormal</refinedUCA>
+                <refinedSC>IncreasePower command must not be provided too late when MyVar is Abnormal</refinedSC>
+                <ltlProp>[] (((((((MyVar==Abnormal)))-&gt;((controlAction==IncreasePower))))&amp;&amp;(!(((((MyVar==Abnormal)))U((controlAction==IncreasePower)))))))</ltlProp>
+                <type>too late</type>
+                <relatedUCAIDs/>
+                <relatedCaID>0996fce7-ee00-4eb3-88a1-18f5767a7a8e</relatedCaID>
+            </rule>
+            <rule>
+                <ruleID>0a3a4d8e-bccf-4626-9254-5eaa0ec3e72e</ruleID>
+                <ruleNR>9</ruleNR>
+                <criticalCombies>MyVar==Normal</criticalCombies>
+                <RefinedSafetyRule>The IncreasePower command must not be provided too early when MyVar = Normal</RefinedSafetyRule>
+                <refinedUCA>The IncreasePower command is provided too early when MyVar is Normal</refinedUCA>
+                <refinedSC>IncreasePower command must not be provided too early when MyVar is Normal</refinedSC>
+                <ltlProp>[] ((((controlAction==IncreasePower))-&gt;(((!((controlAction==IncreasePower)))U(((MyVar==Normal)))))))</ltlProp>
+                <type>too early</type>
+                <relatedUCAIDs/>
+                <relatedCaID>0996fce7-ee00-4eb3-88a1-18f5767a7a8e</relatedCaID>
+            </rule>
+            <rule>
+                <ruleID>b8cdb36c-bd7b-4ff9-98ae-c7852f1994ee</ruleID>
+                <ruleNR>6</ruleNR>
+                <criticalCombies>MyVar==Abnormal</criticalCombies>
+                <RefinedSafetyRule>The IncreasePower command must not be provided too early when MyVar = Abnormal</RefinedSafetyRule>
+                <refinedUCA>The IncreasePower command is provided too early when MyVar is Abnormal</refinedUCA>
+                <refinedSC>IncreasePower command must not be provided too early when MyVar is Abnormal</refinedSC>
+                <ltlProp>[] ((((controlAction==IncreasePower))-&gt;(((!((controlAction==IncreasePower)))U(((MyVar==Abnormal)))))))</ltlProp>
+                <type>too early</type>
+                <relatedUCAIDs/>
+                <relatedCaID>0996fce7-ee00-4eb3-88a1-18f5767a7a8e</relatedCaID>
+            </rule>
+        </rules>
+        <scenarios/>
+        <customLTLs>
+            <customLTL>
+                <ruleID>ccc51b89-cad9-44c3-9bc2-c95e21a38043</ruleID>
+                <ruleNR>4</ruleNR>
+                <type>anytime</type>
+            </customLTL>
+        </customLTLs>
+    </extendedData>
+    <linkController>
+        <linkMap>
+            <linkList key="UCA_HAZ_LINK">
+                <links>
+                    <link linkA="c3564344-7613-4409-b3c4-9482bfc25cd9" linkB="f7717d9b-dd24-4bf6-84c0-ddc24c550ebe" id="5346f8b1-edd2-4248-9e47-79e404a1be32">
+                        <linkNote></linkNote>
+                    </link>
+                    <link linkA="215d0bf4-94e2-4af0-bfaf-8f3d970cca80" linkB="f7717d9b-dd24-4bf6-84c0-ddc24c550ebe" id="b7fe4859-8b37-496b-b24a-f4ad1ff40f53">
+                        <linkNote></linkNote>
+                    </link>
+                    <link linkA="48c71a7b-38ec-46e8-b217-1368b2e62df0" linkB="f7717d9b-dd24-4bf6-84c0-ddc24c550ebe" id="2a5043e5-0cf1-4c89-961c-f09e7ceebb90">
+                        <linkNote></linkNote>
+                    </link>
+                    <link linkA="3405b5c5-0206-426d-9d0d-cb3938d172df" linkB="f7717d9b-dd24-4bf6-84c0-ddc24c550ebe" id="720b5881-8d4a-4d0f-98b6-786811fec122">
+                        <linkNote></linkNote>
+                    </link>
+                </links>
+            </linkList>
+            <linkList key="HAZ_ACC_LINK">
+                <links>
+                    <link linkA="58ee3df4-5b99-4e72-b546-33a4669bf892" linkB="f7717d9b-dd24-4bf6-84c0-ddc24c550ebe" id="19f38d35-a9bc-4951-b955-88e6eb19ec8f">
+                        <linkNote></linkNote>
+                    </link>
+                </links>
+            </linkList>
+            <linkList key="ACC_S0_LINK">
+                <links>
+                    <link linkA="0c22c547-3fc2-48bd-b15b-ab6c65056e46" linkB="58ee3df4-5b99-4e72-b546-33a4669bf892" id="19c62312-80cd-4109-9573-dd2e8c129612">
+                        <linkNote></linkNote>
+                    </link>
+                </links>
+            </linkList>
+        </linkMap>
+    </linkController>
+</ns2:dataModelController>
