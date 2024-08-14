@@ -9,7 +9,6 @@ STD_UNA_OPERATORS = {
 }
 STD_BIN_OPERATORS = {
     "->": 8,
-    "U": 7,
     "&&": 6,
     "||": 6,
     "^": 6,
@@ -64,11 +63,18 @@ class Expr:
                 new_dict[k] = v
         return new_dict
 
-    def unparse(self, ctx):
+    def _unparse(self):
         """
         Unparse and print the LTL formula.
         """
         raise NotImplementedError
+
+    def unparse(self, operators_mapping: dict[str, str] = None):
+        try:
+            Expr.__operators_mapping__ = operators_mapping or {}
+            return self._unparse()
+        finally:
+            Expr.__operators_mapping__ = {}
 
 
 class Identifier(Expr):
@@ -78,7 +84,7 @@ class Identifier(Expr):
     # def __str__(self) -> str:
     #     return self.name
 
-    def unparse(self):
+    def _unparse(self):
         return self.name
 
 
@@ -87,7 +93,7 @@ class Const(Expr):
         self.value = value
         self.type = type
 
-    def unparse(self):
+    def _unparse(self):
         return str(self.value)
 
 
@@ -103,7 +109,7 @@ class UnaryOperator(Expr):
     # def __str__(self) -> str:
     #     return f"({self.operator} {self.operand})"
 
-    def unparse(self):
+    def _unparse(self):
         priority_this = get_expr_priority(self)
         priority_operator = get_expr_priority(self.operand)
         operand_parsed = self.operand.unparse()
@@ -116,6 +122,7 @@ class UnaryOperator(Expr):
 class BinaryOperator(Expr):
     def __init__(self, left, operator, right) -> None:
         self.left: Expr = left
+        print("operator_mapping", self.__operators_mapping__, "op", operator)
         self.operator = (
             operator
             if operator in STD_BIN_OPERATORS
@@ -123,7 +130,7 @@ class BinaryOperator(Expr):
         )
         self.right: Expr = right
 
-    def unparse(self):
+    def _unparse(self):
         """
         Compare the priority on this level (priority_this) and
             the sub-expressions (priority_left, priority_right).
@@ -134,7 +141,6 @@ class BinaryOperator(Expr):
         priority_right = get_expr_priority(self.right)
         left_unparsed = self.left.unparse()
         right_unparsed = self.right.unparse()
-        print("unparsed", left_unparsed, right_unparsed)
         # If left operand does not have priority
         # then add brackets
         if priority_left >= priority_this:

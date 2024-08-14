@@ -10,14 +10,14 @@ class LTLTokensConfig:
         default_factory=list
     )
 
-    def update_variables_scope(self, scope: object):
-        for token_name, token_value in self.tokens_mapping:
-            assert hasattr(scope, token_name), f"Token {token_name} not in scope."
-            match token_value:
-                case str() | _ if callable(token_value):
-                    setattr(scope, token_name, token_value)
-                case _:
-                    raise ValueError(f"Invalid token value: {token_value}")
+    # def update_variables_scope(self, scope: object):
+    #     for token_name, token_value in self.tokens_mapping:
+    #         assert hasattr(scope, token_name), f"Token {token_name} not in scope."
+    #         match token_value:
+    #             case str() | _ if callable(token_value):
+    #                 setattr(scope, token_name, token_value)
+    #             case _:
+    #                 raise ValueError(f"Invalid token value: {token_value}")
 
 
 class LTLLexer:
@@ -34,7 +34,6 @@ class LTLLexer:
         self.t_RPAREN = r"\)"
         self.t_COLON = r"\:"
         self.t_COMMA = r","
-        self.t_ARROW = r"-->"
         self.t_UNDER = r"under"
         self.t_FALSE = r"false"
         self.t_TRUE = r"true"
@@ -45,7 +44,6 @@ class LTLLexer:
         self.t_IMPLIES = r"->"
         self.t_DOT = r"\."
         self.t_LOCATION = r"location"
-        self.t_MINUS_2147483648 = r"-2147483648"
         self.t_DEADLOCK = r"deadlock"
         self.t_STRING_LITERAL = r"\'.*?\'"
         # self.# t_DYNAMICE_EXPRESSION = r'\w+?D/ynamicExpression'
@@ -74,9 +72,6 @@ class LTLLexer:
         self.t_OR = r"\|\|"
         self.t_XOR = r"\^"
         self.t_QUESTION = r"\?"
-        self.t_AND_OP = r"and"
-        self.t_OR_OP = r"or"
-        self.t_XOR_OP = r"xor"
         self.t_ignore = " \t\n"
         self.t_NOT = r"!"
         self.tokens = (
@@ -94,7 +89,6 @@ class LTLLexer:
             "RBRACE",
             "COLON",
             "COMMA",
-            "ARROW",
             "UNDER",
             "IDENTIFIER",
             "LPAREN",
@@ -111,7 +105,6 @@ class LTLLexer:
             "MINUSMINUS",
             "DOT",
             "NOT",
-            "UNION",
             "LOCATION",
             "NON_TYPE_ID",
             "ARG_LIST",
@@ -143,15 +136,13 @@ class LTLLexer:
             "XOR",
             "QUESTION",
             "IMPLIES",
-            "AND_OP",
-            "OR_OP",
-            "XOR_OP",
-            "MINUS_2147483648",
             "DEADLOCK",
             # "EXPRESSION",
         )
         self.config = config or LTLTokensConfig()
-        self.config.update_variables_scope(self)
+        # self.lexer = lex.lex(module=self)
+    def setup(self):
+        # pass
         self.lexer = lex.lex(module=self)
 
     # The token parsing order
@@ -181,10 +172,7 @@ class LTLLexer:
 
     def t_IDENTIFIER(self, t):
         r"\w+"
-        if t.value == "U":
-            t.type = "UNION"
-        else:
-            t.value = Identifier(t.value)
+        t.value = Identifier(t.value)
 
         return t
 

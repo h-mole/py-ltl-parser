@@ -8,16 +8,30 @@ from .ltl import *
 class LTLParser:
     def __init__(
         self,
-        tokens_config: LTLTokensConfig,
+        # tokens_config: LTLTokensConfig,
+        lexer: LTLLexer,
         operators_mapping: Optional[dict[str, str]] = None,
     ) -> None:
-        self.ltl_lexer = LTLLexer(tokens_config)
+        lexer.setup()
+        self.ltl_lexer = lexer
+
         self.operators_mapping = operators_mapping or {}
         self.lexer, self.tokens = self.ltl_lexer.lexer, self.ltl_lexer.tokens
         self.parser = yacc.yacc(module=self, debug=True)
 
     def parse(self, expr: str) -> Expr:
         try:
+            # lexer = self.ltl_lexer.lexer
+            # lexer.input(expr)
+
+            # # Tokenize
+            # while True:
+            #     tok = lexer.token()
+            #     print(tok)
+            #     if not tok:
+            #         print("tokens end!")
+            #         break      # No more input
+                
             Expr.__operators_mapping__ = self.operators_mapping
             return self.parser.parse(expr, lexer=self.lexer)
         finally:
@@ -30,25 +44,15 @@ class LTLParser:
         | AG expression
         | EG expression
         | EE expression
-        | expression ARROW expression
+        | expression
         """
-        # print(list(p))
         if len(p) == 3:
             p[0] = UnaryOperator(p[1], p[2])
-        elif len(p) == 4:
-            p[0] = BinaryOperator(p[1], p[2], p[3])
+        elif len(p) == 2:
+            # p[0] = BinaryOperator(p[1], p[2], p[3])
+            p[0] = p[1]
         else:
             raise NotImplementedError(p[:])
-        # '''
-        #     | expression ARROW expression Subjection
-        #     | SUP COLON List Subjection
-        #     | SUP LBRACE Predicate RBRACE COLON List Subjection
-        #     | INF COLON List Subjection
-        #     | INF LBRACE Predicate RBRACE COLON List Subjection
-        #     | BOUNDS COLON List Subjection
-        #     | BOUNDS LBRACE Predicate RBRACE COLON List Subjection
-        # '''
-        pass
 
     def p_List(self, p):
         """List : expression
@@ -65,7 +69,6 @@ class LTLParser:
         expression : bin_op_lv8
 
         """
-        print("aa", p[:])
         match p[:]:
             case [_, Identifier() | Const()]:
                 p[0] = p[1]
@@ -83,8 +86,8 @@ class LTLParser:
         | bin_op_lv7 IMPLIES bin_op_lv8
         """
         match p[:]:
-            case [_, expr, "->", expr2]:
-                p[0] = BinaryOperator(expr, "->", expr2)
+            case [_, expr, symbol, expr2] if symbol == self.ltl_lexer.t_IMPLIES:
+                p[0] = BinaryOperator(expr, symbol, expr2)
             case [_, expr]:
                 p[0] = expr
             case _:
@@ -92,11 +95,10 @@ class LTLParser:
 
     def p_binop_level_7(self, p):
         """bin_op_lv7 : bin_op_lv6
-        | bin_op_lv6 UNION bin_op_lv7
         """
         match p[:]:
-            case [_, expr, "U", expr2]:
-                p[0] = BinaryOperator(expr, "U", expr2)
+            # case [_, expr, self.ltl_lexer.t_OR, expr2]:
+            #     p[0] = BinaryOperator(expr, self.ltl_lexer.t_OR, expr2)
             case [_, expr]:
                 p[0] = expr
             case _:
@@ -151,7 +153,6 @@ class LTLParser:
                 p[0] = expr
             case _:
                 raise NotImplementedError(p[:])
-        # p [0] = BinaryOperator(p[1], p[2], p[3])
 
     # 乘除求余级别
     def p_binop_level_3(self, p):
@@ -199,11 +200,12 @@ class LTLParser:
                 raise NotImplementedError(p[:])
 
     def p_error(self, p):
-        print(p, p.lexpos)
+        print(p)
+        print(p.lexpos)
         print(f"Syntax error at '{p.value}'")
 
 
 def parse_ltl(ltl_string, parser: Optional[LTLParser] = None) -> Expr:
     if parser is None:
-        parser = LTLParser(LTLTokensConfig())
+        parser = LTLParser(LTLLexer(LTLTokensConfig()))
     return parser.parse(ltl_string)
