@@ -11,6 +11,12 @@ such as UPPAAL, XSTAMPP, ... etc
 python -m pip install py_ltl_parser
 ```
 
+## Packup
+
+```python
+pip wheel --wheel-dir ./dist .
+```
+
 ## Usage
 
 ```python

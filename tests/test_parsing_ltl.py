@@ -63,3 +63,6 @@ def test_parse_xstampp_ltl():
     parsed = parse_xstampp_ltl("((controlAction==IncreasePower) -> A U x)")
     print(parsed.unparse())
     print("unparsed_to_uppaal", parsed.unparse({"->": "-->", "[]": "A[]"}))
+
+    parsed_2 = parse_xstampp_ltl("[] (((((ACE4==direct)&&(ACE3==direct)&&(ACE1==normal)&&(ACE2==normal)))->(!((controlAction==Providedisplacementandforcevariablesofthedrivingstick)))))")
+    # print(parsed_2.unparse({"[]": "A[]"}))

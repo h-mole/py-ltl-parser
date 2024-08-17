@@ -1,6 +1,6 @@
 [project]
 name = "py-ltl-parser"
-version = "0.0.1"
+version = "0.1.0alpha"
 dependencies = ["dataclasses_json", "ply"]
 requires-python = ">= 3.10"
 

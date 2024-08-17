@@ -32,7 +32,7 @@ class XSTAMPPLTLLexer(LTLLexer):
 
 class XSTAMPPLTLParser(LTLParser):
     def __init__(self) -> None:
-        super().__init__(XSTAMPPLTLLexer(), {"U": "||", "U": '||'})
+        super().__init__(XSTAMPPLTLLexer(), {"U": "||", "U": '||', '[]': 'A[]'})
 
 
 def parse_xstampp_ltl(ltl_string: str):
