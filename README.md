@@ -70,8 +70,15 @@ The printted LTL formula in line 4：
 []controlAction==IncreasePower->!(controlAction==IncreasePower)UMyVar==Abnormal
 ```
 
-## Customize LTL Tokens
+## Parsing UPPAAL LTL Expression
 
+```python
+from py_ltl_parser import parse_uppaal_ltl
+parsed = parse_uppaal_ltl(
+    "(((ACE4==0)&&(ACE3==0)&&(ACE1==0)&&(ACE2==2)))--> (!((s==0)))"
+)
+print(parsed.to_dict())
+```
 
 ## Development
 

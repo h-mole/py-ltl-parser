@@ -55,6 +55,7 @@ def test_parse_uppaal_ltl():
     parsed = parse_uppaal_ltl(
         "(((ACE4==0)&&(ACE3==0)&&(ACE1==0)&&(ACE2==2)))--> (!((s==0)))"
     )
+    print(parsed.to_dict())
     # print(parsed.unparse({"-->"}))
 
 
