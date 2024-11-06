@@ -54,6 +54,10 @@ class Expr:
     # Mapping of operators to their representation in specific LTL format
     __operators_mapping__ = {}
 
+    @classmethod
+    def _get_operator(cls, operator: str) -> str:
+        return operator if operator not in cls.__operators_mapping__ else cls.__operators_mapping__[operator]
+
     def to_dict(self):
         new_dict = {}
         for k, v in self.__dict__.items():
@@ -71,7 +75,10 @@ class Expr:
 
     def unparse(self, operators_mapping: dict[str, str] = None):
         try:
+            print("operators_mapping", __file__, operators_mapping)
             Expr.__operators_mapping__ = operators_mapping or {}
+            print("finally", Expr.__operators_mapping__,
+                  self.__operators_mapping__)
             return self._unparse()
         finally:
             Expr.__operators_mapping__ = {}
@@ -112,11 +119,12 @@ class UnaryOperator(Expr):
     def _unparse(self):
         priority_this = get_expr_priority(self)
         priority_operator = get_expr_priority(self.operand)
-        operand_parsed = self.operand.unparse()
+        operand_parsed = self.operand._unparse()
+        op = self._get_operator(self.operator)
         if priority_operator >= priority_this:
-            return f"{self.operator}({operand_parsed})"
+            return f"{op}({operand_parsed})"
         else:
-            return f"{self.operator}{operand_parsed}"
+            return f"{op}{operand_parsed}"
 
 
 class BinaryOperator(Expr):
@@ -139,8 +147,8 @@ class BinaryOperator(Expr):
         priority_this = get_expr_priority(self)
         priority_left = get_expr_priority(self.left)
         priority_right = get_expr_priority(self.right)
-        left_unparsed = self.left.unparse()
-        right_unparsed = self.right.unparse()
+        left_unparsed = self.left._unparse()
+        right_unparsed = self.right._unparse()
         # If left operand does not have priority
         # then add brackets
         if priority_left >= priority_this:
@@ -149,4 +157,5 @@ class BinaryOperator(Expr):
         # then add brackets
         if priority_right >= priority_this:
             right_unparsed = f"({right_unparsed})"
-        return f"{left_unparsed}{self.operator}{right_unparsed}"
+        op = self._get_operator(self.operator)
+        return f"{left_unparsed}{op}{right_unparsed}"
